@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Barbería virtual</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#16202a">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{--bg:#eef0f1;--card:#fff;--ink:#16202a;--mute:#5d6a76;--line:#d5dbe0;--red:#c8372d;--blue:#1f4e79;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -187,6 +191,7 @@ $("save").onclick = () => {
   const a = document.createElement("a");
   a.download = "mi-corte.png"; a.href = cv.toDataURL("image/png"); a.click();
 };
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 </script>
 </body>
 </html>
